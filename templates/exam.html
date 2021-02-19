@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<div class="row">
+  <div class="column3">
+  CURRENT CLINICAL EXAM
+<form action="" width=600px method="post" novalidate>
+<table>
+<thead><tr><th width="20%"> </th><th width="20%">Left</th><th width="20%">Right</th></tr></thead>
+
+<tbody>
+{% for item in items%}
+    <tr>
+        <td>{{item.name}} </td> 
+        <td><input class="narrow" type="text" name={{item.nameL}} value={{item.left}}></td> 
+        <td><input class="narrow" type="text" name={{item.nameR}} value= {{item.right}}></td>
+    </tr>
+{%endfor%}
+</tbody>
+</table>
+<p>
+
+<input type="submit" name="submitButton" value="Save exam" />
+</form>
+
+  </div class="column3">
+<div class="column3">
+COMBINED CLINICAL EXAMS
+<form class="wide" action="" width=600px method="post" novalidate>
+<table>
+<thead><tr><th width="20%"> </th>
+    {% if years[0] %}
+    <th width="20%">{{years[0]}}</th>
+    {% endif %}
+    {% if years[1] %}
+    <th width="20%">{{years[1]}}</th>
+    {% endif %}
+    {% if years[2] %}
+    <th width="20%">{{years[2]}}</th>
+    {% endif %}
+    {% if years[0] %}
+    <th width="20%">{{years[0]}}</th>
+    {% endif %}
+    {% if years[1] %}
+    <th width="20%">{{years[1]}}</th>
+    {% endif %}
+    {% if years[2] %}
+    <th width="20%">{{years[2]}}</th>
+    {% endif %}
+    </tr>
+    
+    <tr><th width="20%"> </th>
+    {% if years[0] %}
+    <th width="20%">Left</th>
+    {% endif %}
+    {% if years[1] %}
+    <th width="20%">Left</th>
+    {% endif %}
+    {% if years[2] %}
+    <th width="20%">Left</th>
+    {% endif %}
+    {% if years[0] %}
+    <th width="20%">Right</th>
+    {% endif %}
+    {% if years[1] %}
+    <th width="20%">Right</th>
+    {% endif %}
+    {% if years[2] %}
+    <th width="20%">Right</th>
+    {% endif %}
+    </tr>
+    
+    </thead>
+
+<tbody>
+{% for item in combined%}
+    <tr>
+    
+
+    {% if years[1] %}
+        <td>{{item.name}} </td> 
+        <td>{{item.D1}}</td> 
+        <td>{{item.D2}}</td>
+        <td>{{item.D3}}</td>
+        <td>{{item.D4}}</td>
+    {% endif %}
+    {% if years[2] %}    
+        <td>{{item.D5}}</td>
+        <td>{{item.D6}}</td>
+    {% endif %}
+
+    </tr>
+{%endfor%}
+</tbody>
+</table>
+<p>
+
+</form>
+</div class="column3">
+{% endblock %}

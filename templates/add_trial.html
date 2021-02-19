@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+Data folder: {{data_folder}}<br>
+<br>
+<br>
+{{table}}
+<br>
+<br>
+
+
+
+    <form class="wide" action="" method="post" novalidate>
+        
+            Select trials below, then select trial type and click to add to list<br>
+            
+            {{form.ttype_select}}<br>
+            
+            <input type="submit" name="submitButton" value="Select trials">
+            <input type="submit" name="submitButton" value="Exit" /><br>
+             
+
+            {% for list in my_list %}
+              
+              <input type="checkbox" name="trial" value="{{list}}" >{{list}}<br>
+          {% endfor %}   
+    </form>
+    
+
+
+{% endblock %}

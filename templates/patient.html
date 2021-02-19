@@ -1,0 +1,57 @@
+
+
+{% extends "base.html" %}
+
+
+
+
+{% block content %}
+
+<div class="row">
+  <div class="column3">
+
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+            patient ID: {{p.id}} <p>
+
+            {{ form.name.label }}
+            {{ form.name(value=p.name) }}<br>
+
+            {{ form.surname.label }}
+            {{ form.surname(value=p.surname) }}<br>
+
+            {{ form.dob_str.label }}
+            {{ form.dob_str(value=p.dob_str) }}<br>
+
+            {{ form.hosp_no.label }}
+            {{ form.hosp_no(value=p.hosp_no) }}<br>
+            
+            {{ form.NHS_no.label }}
+            {{ form.NHS_no(value=p.NHS_no) }}<br>
+        </p>
+        </select>
+        </p>
+        <input type="submit" name="submitButton" value="Save patient details" />
+    </form>
+    </div>
+   <div class="column3">
+       <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        </p>
+        <input type="submit" name="submitButton" value="Select diagnosis" />
+    </form>
+    </div>
+   <div class="column3">
+   Notes</div>
+</div>  
+<p>  
+{{diagnosis_table}}
+   <h1>Appointment details</h1> 
+  
+    
+    
+            
+    {{ table }}
+
+
+{% endblock %}

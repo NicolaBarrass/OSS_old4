@@ -1,0 +1,416 @@
+<style>
+form {
+  /* Just to center the form on the page */
+  margin: 0 auto;
+  width: 300px;
+  text-align: left;
+  /* To see the outline of the form */
+  padding: 0.5rem;
+  border: 1px solid #CCC;
+  border-radius: 1em;
+}
+
+.imageAnchor:focus img{
+    border: 2px solid blue;
+    height: 300px;
+}
+
+
+
+input[type=checkbox]
+{
+  /* Double-sized Checkboxes */
+  -ms-transform: scale(1); /* IE */
+  -moz-transform: scale(1); /* FF */
+  -webkit-transform: scale(1); /* Safari and Chrome */
+  -o-transform: scale(1); /* Opera */
+  transform: scale(1);
+  padding: 0px;
+  margin:0;
+}
+
+input.chk {
+    width: 10px;
+    margin:0;
+}
+
+/* Might want to wrap a span around your checkbox text */
+.checkboxtext
+{
+  /* Checkbox text */
+  font-size: 110%;
+  display: inline;
+}
+
+.textareaTitle {
+  width: 600px;
+  min-height: 17px;
+  border: 1px solid #ccc;
+  max-height: 150px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  text-decoration: underline
+}
+
+.textareaText {
+  width: 600px;
+  min-height: 35px;
+  border: 1px solid #ccc;
+  max-height: 300px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+form.wide {
+  /* Just to center the form on the page */
+  margin: 0 auto;
+  width: 96%;
+  text-align: left;
+  /* To see the outline of the form */
+  padding: 0.5rem;
+  border: 1px solid #CCC;
+  border-radius: 1em;
+}
+
+.ckb_label {
+width: 350px;
+text-align: left;
+padding: 0px;
+}
+
+.ckb {
+width: 15px;
+}
+
+.small_history {
+width: 95%;
+height: 120px;
+}
+
+.large_history {
+width: 95%;
+height: 400px;
+}
+
+.tb_small {
+width: 100px;
+}
+.tb_medium {
+width: 200px;
+}
+.tb_large {
+width: 350px;
+}
+
+table {border-collapse: collapse;}
+td    {padding: 2px 15px;}
+
+form div + div {
+  margin-top: 1em;
+}
+
+th {
+width: 60px;
+}
+
+label {
+  /* To make sure that all labels have the same size and are properly aligned */
+  display: inline-block;
+  width: 100px;
+}
+
+
+
+input, textarea {
+  /* To make sure that all text fields have the same font settings
+     By default, textareas have a monospace font */
+  font: 1em sans-serif;
+
+  /* To give the same size to all text fields */
+  width: 190px;
+  box-sizing: border-box;
+
+  /* To harmonize the look & feel of text field border */
+  border: 1px solid #999;
+}
+
+input.narrow, textarea {
+  /* To make sure that all text fields have the same font settings
+     By default, textareas have a monospace font */
+  font: 1em sans-serif;
+
+  /* To give the same size to all text fields */
+  width: 60px;
+  box-sizing: border-box;
+
+  /* To harmonize the look & feel of text field border */
+  border: 1px solid #999;
+}
+
+textarea.large {
+  width: 600px;
+  height: 400px;
+  padding: 12px;
+  text-indent: 0px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  resize: none;
+}
+
+textarea.textarea_editable {
+  width: 300px;
+  min-height: 17px;
+  border: 1px solid #ccc;
+  max-height: 150px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+textarea.large.first {
+  text-indent: -50px;
+}
+
+input.large, textarea {
+  /* To make sure that all text fields have the same font settings
+     By default, textareas have a monospace font */
+  font: 1em sans-serif;
+
+  /* To give the same size to all text fields */
+  width: 300px;
+  height:300px;
+  box-sizing: border-box;
+
+  /* To harmonize the look & feel of text field border */
+  border: 1px solid #999;
+}
+
+
+
+submit {
+    width: 300px;
+}
+
+textarea {
+  /* To properly align multiline text fields with their labels */
+  vertical-align: top;
+
+  /* To give enough room to type some text */
+  height: 5em;
+}
+
+.button {
+  /* To position the buttons to the same position of the text fields */
+  padding-left: 90px; /* same size as the label elements */
+}
+
+button {
+  /* This extra margin represent roughly the same space as the space
+     between the labels and their text fields */
+  margin-left: .5em;
+}
+body {
+font-family: Arial, sans-serif;
+}
+
+.column2 {
+  float: left;
+  width: 50%;
+  text-align: left;
+}
+.column3 {
+  float: left;
+  width: 33%;
+  text-align: center;
+}
+.column23 {
+  float: left;
+  width: 66%;
+  text-align: center;
+}
+.column6 {
+  float: left;
+  width: 16%;
+  text-align: center;
+}
+.columnall {
+  float: left;
+  width: 100%;
+  text-align: center;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column4 {
+  float: left;
+  width: 25%;
+}
+
+.column5 {
+  float: left;
+  width: 20%;
+}
+
+a:visited, a:link {
+cursor: default;
+}
+a:hover {
+cursor: pointer;
+}
+.on-page {
+color: rgb(0, 0, 255);
+}
+.not-on-page {
+color: rgb(75,0,130);
+}
+
+pre {
+  display: block;
+  font-family: Arial, sans-serif;
+  white-space: pre;
+  margin: 1em 0;
+  line-height: 0.6
+}
+p2 {
+  display: block;
+  font-family: Arial, sans-serif;
+  white-space: 0px;
+  margin: 1em 0;
+  line-height: 0.8;
+  margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+
+
+</style>
+
+
+<html>
+    <head>
+        {% if title %}
+        <title>{{ title }} - OSS Suite</title>
+        {% else %}
+        <title>Welcome to OSS Suite</title>
+        {% endif %}
+    </head>
+    
+    <body>  
+
+        {% if report %}
+        <title>{{ report }} - OSS Suite</title>
+        {% endif %}
+        
+    
+    
+
+        <div class="column2">
+        {% if tabs1=="report" %} 
+            <a href="{{ url_for('header',appID=appID) }}">Text</a>
+            <a href="{{ url_for('kinematics') }}">Data</a>
+            <a href="{{ url_for('export',appID=appID) }}">Export</a>
+            <a href="{{ url_for('diary', date='None') }}">Exit</a>
+        {% endif %}    
+        {% if tabs2=="text" %}
+        <p>
+            <a href="{{ url_for('header') }}">Header</a>
+            <a href="{{ url_for('history') }}">History</a>
+            <a href="{{ url_for('phonehistory') }}">Phone History</a>
+            <a href="{{ url_for('findings') }}">Summary of findings</a>
+            <a href="{{ url_for('recommendations') }}">Recommendations</a>
+        {% endif %}    
+        {% if tabs2=="data" %}  
+        <p> 
+            <a href="{{ url_for('video') }}">Video</a>
+            <a href="{{ url_for('exam') }}">Exam</a>
+            <a href="{{ url_for('photos') }}">Photos</a>
+            <a href="{{ url_for('ST') }}">Spatio-temporals</a>
+            <a href="{{ url_for('kinematics') }}">Kinematics</a>
+            <a href="{{ url_for('kinetics') }}">Kinetics</a>
+        {% endif %} 
+        </div>
+        <div class="column2">     
+        {% if tabs1=="report" %}
+        <p><h1>{{rep_data.name}} dob: {{rep_data.dob_str}}</h1>
+         {% endif %}           
+        </div>
+        
+        {% if tabs1=="management" %}
+            {% if title=="Diary" %}
+                <a href="{{ url_for('diary',date='None') }}" class="on-page">Diary</a>
+            {% else %}
+                <a href="{{ url_for('diary',date='None') }}" class="not-on-page">Diary</a>
+            {% endif %}
+            {% if title=="Referrals awaiting appointments" %}
+                <a href="{{ url_for('needs_app') }}" class="on-page">Admin</a>
+            {% else %}
+                <a href="{{ url_for('needs_app') }}" class="not-on-page">Admin</a>
+            {% endif %}
+            {% if title=="Database" %}
+                <a href="{{ url_for('any_database',page='Patient') }}" class="on-page">Database</a>
+            {% else %}
+                <a href="{{ url_for('any_database',page='Patient') }}" class="not-on-page">Database</a>
+            {% endif %}
+
+
+        {% endif %}
+        {% if tabs2=="admin" %}
+            <p/>
+            <a href="{{ url_for('referral') }}">Referral</a>
+            <a href="{{ url_for('register') }}">Register</a>
+            {% if title=="Referrals awaiting appointments" %}
+                <a href="{{ url_for('needs_app') }}" class="on-page">Needs_app</a>
+            {% else %}
+                <a href="{{ url_for('needs_app') }}" class="not-on-page">Needs_app</a>
+            {% endif %} 
+            {% if title=="Appointments made" %}
+                <a href="{{ url_for('app_made') }}" class="on-page">App_made</a>
+            {% else %}
+                <a href="{{ url_for('app_made') }}" class="not-on-page">App_made</a>
+            {% endif %} 
+            {% if title=="In progress" %}
+                <a href="{{ url_for('in_progress') }}" class="on-page">In_progress</a>
+            {% else %}
+                <a href="{{ url_for('in_progress') }}" class="not-on-page">In_progress</a>
+            {% endif %}    
+        {% endif %}
+        {% if tabs2=="database" %}
+            <p/>
+            <a href="{{ url_for('any_database',page='Patient') }}">patient</a>
+            <a href="{{ url_for('any_database',page='Appointment') }}">appointment</a>
+            <a href="{{ url_for('any_database',page='Condition') }}">condition</a>
+            <a href="{{ url_for('any_database',page='Trial') }}">trial</a>
+            <a href="{{ url_for('any_database',page='Exam') }}">exam</a>
+
+  
+        {% endif %}
+        
+        
+        </div>
+        
+        {% if title %}
+            <h1>{{ title }}</h1>
+        {% endif %}
+
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        {% block head %}
+        
+        {% endblock %}
+        {% block content %}{% endblock %}
+    </body>
+</html>

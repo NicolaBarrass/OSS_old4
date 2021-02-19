@@ -1,0 +1,29 @@
+
+
+{% extends "base.html" %}
+
+{% block content %}
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        Trial ID: {{c.id}} <p>
+        {{c.condition}}<p>
+        
+            
+            {{ form.c3dfile.label }}
+            {{ form.c3dfile(value=c.c3dfile) }}<br>
+
+
+        </p>
+
+            
+        <!-- <form action="/action_page.php">   --> 
+
+        </select>
+        </p>
+        <input type="submit" name="submitButton" value="Go back to condition" />
+        <input type="submit" name="submitButton" value="Return to trial database" />
+    </form>
+    
+
+
+{% endblock %}

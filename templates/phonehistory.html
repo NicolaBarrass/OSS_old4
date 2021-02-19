@@ -1,0 +1,139 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+<div class="row">
+
+<form class="wide" action="" method="post" novalidate>
+<div class="column3">
+<input type="submit" name="submitButton" value="Save history" /><p>
+        <b>Start of appointment checklist</b>
+        <p>{{ form.ck1 (class_="ckb")}}
+        {{ form.ck1.label (class_="ckb_label") }}</p>
+        <p>{{ form.ck2 (class_="ckb")}}
+        {{ form.ck2.label (class_="ckb_label") }}</p>
+        <p>{{ form.ck3 (class_="ckb")}}
+        {{ form.ck3.label (class_="ckb_label") }}</p>
+        
+        <b>Difficulties during interview?</b>
+<p>{{ form.diff (class_="ckb")}}
+{{ form.diff.label (class_="ckb_label") }}</p>
+{{form.diff_box (class_="small_history")}}
+<b>Comments</b>
+{{form.comm_box (class_="large_history")}}
+
+        <b>End of appointment checklist</b>
+        <p>{{ form.ck4 (class_="ckb")}}
+        {{ form.ck4.label (class_="ckb_label") }}</p>
+        <p>{{ form.ck5 (class_="ckb")}}
+        {{ form.ck5.label (class_="ckb_label") }}</p>
+        <p>{{ form.ck6 (class_="ckb")}}
+        {{ form.ck6.label (class_="ckb_label") }}</p>
+        <p>{{ form.ck7 (class_="ckb")}}
+        {{ form.ck7.label (class_="ckb_label") }}</p>
+</div>        
+<div class="column23">
+    <table>
+        <tr><td><b>Information</b></td></tr>
+        <tr><td>Date of collection of history</td></tr>
+        <tr><td>Date of upcoming appointment</td>
+            <td>{{this_a.doa_str}}</td></tr>
+        <tr><td>Name of patient to be used in report</td>
+        </tr><tr>
+            <td>Diagnosis</td>
+        </tr><tr>
+            <td><p2>Name of person answering questions</p2></td> 
+            <td>{{form.speaker (class_="tb_medium", value=report_var.historynotes.speaker)}}</td>
+        </tr><tr>
+            <td><p2>Relationship of person answering questions</p2></td>
+            <td>{{form.relationship (class_="tb_medium", value=report_var.historynotes.relationship)}}</td>
+        </tr>
+    </table>
+    <table>
+        <tr><td><p><b>Current mobility</b></p></td><tr>
+        <tr><td>Max walking distance</td>
+            <td> {{form.max_distance (class_="tb_small", value=report_var.historynotes.max_distance)}}</td>
+            <td> units</td>
+            <td> {{form.units (class_="tb_small", value=report_var.historynotes.units)}}</td></tr>
+        </table>
+        <table>
+        <tr><td>Condition </td>
+            <td>{{form.condition (class_="tb_large",value=report_var.historynotes.condition)}} </td>
+        </tr><tr>
+            <td>Stopped by </td>
+            <td>{{form.stopped_by (class_="tb_large", value=report_var.historynotes.stopped_by)}}</td></tr>
+    </table>
+        
+    <table>
+        <tr><td>Where walks, school, home, day trips</td><tr>
+    </table>
+    
+        <p>{{form.current_box (class_="small_history")}}</p>
+
+       
+    <table>
+        <tr><td>Ascends stairs </td>
+            <td> {{form.ascends }} </td>
+            <td> {{form.stairfeet (value=report_var.historynotes.stairfeet)}} </td></tr>
+        <tr><td>Descends stairs  </td>
+            <td>{{form.descends (value=report_var.historynotes.descends)}}  </td>
+        </tr><tr>
+            <td>Kerbs</td>
+            <td> {{form.kerbs (value=report_var.historynotes.kerbs)}}</td>
+            <td> Wheelchair</td><td> {{form.wheelchair (value=report_var.historynotes.wheelchair)}}</td>
+        </tr>
+    </table>
+        
+        <p><b>Changes over last</b> {{form.year (value=report_var.historynotes.year)}}</p>
+        <p>{{form.changes (class_="small_history", value=report_var.historynotes.ascends)}}
+        
+        <p><b>Factors that limit walking</b> </p>
+        <p>{{form.limiting (class_="small_history", value=report_var.historynotes.limiting)}}
+        
+        <p><b>AFOS </b>{{form.AFOS (value=report_var.historynotes.AFOS)}} 
+        If YES: description {{form.afo_description (value=report_var.historynotes.afo_description)}}
+        when worn {{form.afo_worn (value=report_var.historynotes.afo_worn)}}</p>
+        <p>{{form.afo_comment ( value=report_var.historynotes.afo_comment)}}</p>
+        <p><b>Physiotherapy and other activities</b> </p>
+    <table>
+        <tr><td>Name of Physio </td>
+            <td>{{form.physio_name (class_="tb_large", value=report_var.historynotes.physio_name)}}</td>
+        <tr>
+        <tr><td>Name of Physio centre </td>
+            <td>{{form.physio_centre (class_="tb_large", value=report_var.historynotes.physio_centre)}}</td>
+        <tr>
+        <tr><td>How often sees physio </td>
+            <td>{{form.physio_frequency (class_="tb_large", value=report_var.historynotes.physio_frequency)}}</td>
+        <tr>
+        <tr><td>Has physio programme </td>
+            <td>{{form.physio_programme (value=report_var.historynotes.physio_programme)}}</td>
+        <tr>
+    </table>
+        <p>Give details of any physio programme, how often done, where. Other physical activities eg scholl PE, clubs</p>
+        <p>{{form.activities (class_="small_history", value=report_var.historynotes.activities)}}
+        
+        <p><b>Early development</b> </p>
+        <table>
+        <tr><td>Gestation        </td>
+            <td>{{form.gestation (class_="tb_large", value=report_var.historynotes.gestation)}}</td>
+        </tr><tr>
+            <td>Delivery         </td>
+            <td>{{form.delivery (class_="tb_large", value=report_var.historynotes.delivery)}}</td></tr>
+        <tr><td>Neonatal period  </td>
+        <td>{{form.neonatal (class_="tb_large", value=report_var.historynotes.neonatal)}}</td></tr>
+        <tr><td>Age first sat    </td>
+        <td>{{form.age_sat (class_="tb_large", value=report_var.historynotes.age_sat)}}</td></tr>
+        <tr><td>Age first walked </td>
+        <td>{{form.age_walked (class_="tb_large", value=report_var.historynotes.age_walked)}}</td></tr>
+        <tr><td>Age of diagnosis </td>
+        <td>{{form.age_diagnosis (class_="tb_large", value=report_var.historynotes.age_diagnosis)}}</td></tr>
+        </table>
+        <p>Comments</p>
+      </div>  
+    </form>
+</div>
+                     
+
+
+{% endblock %}

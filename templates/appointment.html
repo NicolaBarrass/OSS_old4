@@ -1,0 +1,59 @@
+
+
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+  <div class="column3">
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}       
+               
+        Appointment ID: {{a.id}}<br>
+        Patient: {{a.patient}}<br>
+        DOA: {{a.doa_str}} {{a.time}}<br>
+        Status: {{a.stat}}<br>
+        Follow up: <br>
+
+
+    </form>
+    </div>
+   
+   <div class="column3">
+       <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}     
+        <input type="submit" name="submitButton" value="Add staff" /> <br>
+        <input type="submit" name="submitButton" value="Select folders" /> <br>
+        <input type="submit" name="submitButton" value="Select referrer" /> <br>
+        <p>
+        <input type="submit" name="submitButton" value="Make new condition" />
+        <input type="submit" name="submitButton" value="Go back to patient" />
+    </form>
+   </div>
+   
+   <div class="column3">
+       <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }} 
+        <input type="submit" name="submitButton" value="Open report"/><br>
+        <input type="submit" name="submitButton" value="Open notes"/><br>      
+
+    </form>
+   </div>
+
+</div>  
+CONDITIONS<br>
+{{tables[0]}}<br>
+REFERRER<br>
+{{tables[3]}}<br>
+STAFF<br>
+{{tables[1]}}<br>
+FOLDERS<br>  
+{{tables[2]}}
+
+            
+    
+    
+    
+              
+    
+
+{% endblock %}

@@ -1,0 +1,49 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+
+    <form action="" method="post" novalidate>
+    {% if reg_level=="one" %}
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.number.label }}<br>
+            {{ form.number(size=32) }}<br>
+    
+        </p>
+        <input type="submit" name="submitButton" value="OK1" />
+
+    {% endif %}
+        
+        {% if reg_level=="two" %}
+        <p>{{message}}
+        </p>
+            {{ form.number.label }}
+            {{ form.number(value=hosp_no) }}<br>
+            {{ form.name.label }}
+            {{ form.name(value=p.name) }}<br>
+            {{ form.surname.label }}
+            {{ form.surname(value=p.surname) }}<br>
+            
+            <p>
+            <p>Give appointment details below.
+            <p>If appointment is delayed enter details into box below.
+            <p>
+            
+
+            {{ form.when }}
+       
+
+            {{ form.when_comment }}<br>
+            
+            </p>
+        
+
+            
+            
+            <input type="submit" name="submitButton" value="OK2" />
+        {% endif %}
+        
+    </form>
+
+{% endblock %}

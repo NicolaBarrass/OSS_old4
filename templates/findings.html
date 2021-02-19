@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="column2">
+Findings are as below
+</div>
+<div class="column2">
+{% for finding in f %}
+<a href="{{ url_for('create_finding', appID=appID,t='mild') }}">mild </a> {{finding.text}} <br> 
+{% endfor %}
+</div>
+
+{% endblock %}

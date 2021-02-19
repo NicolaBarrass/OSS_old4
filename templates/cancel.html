@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>You are cancelling appointment on {{day}} {{date}} {{time}}</h1>
+
+<h1> for {{details}}</h1>
+
+<form action="" method="post" novalidate>
+<input type="submit" name="submitButton" value="Do not cancel" />
+<input type="submit" name="submitButton" value="Cancel this appointment" />
+
+{% endblock %}

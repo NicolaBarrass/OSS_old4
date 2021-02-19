@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+<div class="row">
+<div class="columnall">
+<p>
+<p>
+
+<h1>Table of Contents saturday</h1>
+    <a href='#Topic1'>Click to jump to the First Topic</a>
+    <a href='#Topic2'>Click to jump to the Second Topic</a>
+    
+
+<h2 id="Topic1">First topic today</h2>
+<p>Content about the first topic</p>
+la la la
+-(void) scrollMyImportantHTMLPartInView { // Get a list of HTML elements that contain attribute class = "container" (eg. <div class "container">) DOMNodeList *nodeList = [[[self.webView mainFrame] DOMDocument] getElementsByClassName: @"container"]; if( nodeList && nodeList.length >= 1 ) { // get the first node (class = "container") from the list DOMNode *domNode = [nodeList item:0]; // Make sure …
+-(void) scrollMyImportantHTMLPartInView { // Get a list of HTML elements that contain attribute class = "container" (eg. <div class "container">) DOMNodeList *nodeList = [[[self.webView mainFrame] DOMDocument] getElementsByClassName: @"container"]; if( nodeList && nodeList.length >= 1 ) { // get the first node (class = "container") from the list DOMNode *domNode = [nodeList item:0]; // Make sure …
+-(void) scrollMyImportantHTMLPartInView { // Get a list of HTML elements that contain attribute class = "container" (eg. <div class "container">) DOMNodeList *nodeList = [[[self.webView mainFrame] DOMDocument] getElementsByClassName: @"container"]; if( nodeList && nodeList.length >= 1 ) { // get the first node (class = "container") from the list DOMNode *domNode = [nodeList item:0]; // Make sure …
+-(void) scrollMyImportantHTMLPartInView { // Get a list of HTML elements that contain attribute class = "container" (eg. <div class "container">) DOMNodeList *nodeList = [[[self.webView mainFrame] DOMDocument] getElementsByClassName: @"container"]; if( nodeList && nodeList.length >= 1 ) { // get the first node (class = "container") from the list DOMNode *domNode = [nodeList item:0]; // Make sure …
+-(void) scrollMyImportantHTMLPartInView { // Get a list of HTML elements that contain attribute class = "container" (eg. <div class "container">) DOMNodeList *nodeList = [[[self.webView mainFrame] DOMDocument] getElementsByClassName: @"container"]; if( nodeList && nodeList.length >= 1 ) { // get the first node (class = "container") from the list DOMNode *domNode = [nodeList item:0]; // Make sure …-(void) scrollMyImportantHTMLPartInView { // Get a list of HTML elements that contain attribute class = "container" (eg. <div class "container">) DOMNodeList *nodeList = [[[self.webView mainFrame] DOMDocument] getElementsByClassName: @"container"]; if( nodeList && nodeList.length >= 1 ) { // get the first node (class = "container") from the list DOMNode *domNode = [nodeList item:0]; // Make sure …
+<h2 id="Topic2">Second topic</h2>
+<p>Content about the second topic</p>
+-(void) scrollMyImportantHTMLPartInView { // Get a list of HTML elements that contain attribute class = "container" (eg. <div class "container">) DOMNodeList *nodeList = [[[self.webView mainFrame] DOMDocument] getElementsByClassName: @"container"]; if( nodeList && nodeList.length >= 1 ) { // get the first node (class = "container") from the list DOMNode *domNode = [nodeList item:0]; // Make sure …
+-(void) scrollMyImportantHTMLPartInView { // Get a list of HTML elements that contain attribute class = "container" (eg. <div class "container">) DOMNodeList *nodeList = [[[self.webView mainFrame] DOMDocument] getElementsByClassName: @"container"]; if( nodeList && nodeList.length >= 1 ) { // get the first node (class = "container") from the list DOMNode *domNode = [nodeList item:0]; // Make sure …
+-(void) scrollMyImportantHTMLPartInView { // Get a list of HTML elements that contain attribute class = "container" (eg. <div class "container">) DOMNodeList *nodeList = [[[self.webView mainFrame] DOMDocument] getElementsByClassName: @"container"]; if( nodeList && nodeList.length >= 1 ) { // get the first node (class = "container") from the list DOMNode *domNode = [nodeList item:0]; // Make sure …
+-(void) scrollMyImportantHTMLPartInView { // Get a list of HTML elements that contain attribute class = "container" (eg. <div class "container">) DOMNodeList *nodeList = [[[self.webView mainFrame] DOMDocument] getElementsByClassName: @"container"]; if( nodeList && nodeList.length >= 1 ) { // get the first node (class = "container") from the list DOMNode *domNode = [nodeList item:0]; // Make sure …
+-(void) scrollMyImportantHTMLPartInView { // Get a list of HTML elements that contain attribute class = "container" (eg. <div class "container">) DOMNodeList *nodeList = [[[self.webView mainFrame] DOMDocument] getElementsByClassName: @"container"]; if( nodeList && nodeList.length >= 1 ) { // get the first node (class = "container") from the list DOMNode *domNode = [nodeList item:0]; // Make sure …-(void) scrollMyImportantHTMLPartInView { // Get a list of HTML elements that contain attribute class = "container" (eg. <div class "container">) DOMNodeList *nodeList = [[[self.webView mainFrame] DOMDocument] getElementsByClassName: @"container"]; if( nodeList && nodeList.length >= 1 ) { // get the first node (class = "container") from the list DOMNode *domNode = [nodeList item:0]; // Make sure …
+
+    <form class=wide action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <input type="submit" name="submitButton" value="Import text" />
+        <input type="submit" name="submitButton" value="Save history" /><p>
+        {% for history in rep_data.history %}
+            <div class="textareaTitle" contenteditable >{{history.title}}</div>
+            <div class="textareaText" contenteditable >{{history.text}}</div>
+        {% endfor %}
+        <div class="textareaText" contenteditable name="test" id="test" value="test">hello</div>
+        <textarea class="textarea_editable" value="test">hello2</textarea>
+    </form>
+
+</div>                       
+
+
+{% endblock %}

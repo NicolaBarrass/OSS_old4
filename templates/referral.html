@@ -1,0 +1,27 @@
+
+
+{% extends "base.html" %}
+
+{% block content %}
+
+    <body>Click on a letter to view it in adobe
+    </p>Click on register button to go to register page
+    </p>
+    
+    <body>
+    
+    
+    
+    
+    <form action="/referral" method="post" novalidate>
+
+            {% for list in my_list %}
+              <input type="submit" name="submitButton" value="{{list}}" />
+
+          {% endfor %}
+
+
+   
+    </form>
+
+{% endblock %}

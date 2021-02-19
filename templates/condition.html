@@ -1,0 +1,40 @@
+
+
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+   <div class="column3">
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        Condition ID: {{c.id}} <br>
+        {{c.appointment}}<p>
+            
+            {{ form.footware.label }}
+            {{ form.footware(value=c.footware) }}<br>
+
+            {{ form.walking_aid.label }}
+            {{ form.walking_aid(value=c.walking_aid) }}<br>
+
+
+    </form>
+  </div>
+  
+  <div class="column3">
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+
+        </p>
+        <input type="submit" name="submitButton" value="Save condition details" />
+        <input type="submit" name="submitButton" value="Add trials" />
+        <input type="submit" name="submitButton" value="Go back to appointment" />
+
+    </form>
+  </div>
+  
+</div>
+    
+        <h1>Trial details</h1> 
+        {{ table }}
+
+{% endblock %}

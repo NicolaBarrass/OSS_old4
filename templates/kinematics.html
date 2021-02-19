@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+  <div class="column2">
+<table>
+<tbody>
+{% for  my_a in rep_data.apps %}
+    <tr><td>{{my_a.doa_str}}</td></tr>
+         {% for  my_c in my_a.condition %}
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp{{my_c.footware}} {{my_c.walking_aid}}</td><td><input type="checkbox"></td></tr>
+                 {% for  my_t in my_c.trial %}
+                    <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp{{my_t.c3dfile}} </td><td><input STYLE="color: #FFFFFF" type="checkbox"></td></tr>
+                 
+                {% endfor %}
+        {% endfor %} 
+{% endfor %}
+
+
+
+
+</tbody>
+</table>
+</div>
+<div class="column6">
+<a class="imageAnchor" href="#">
+    <img src="{{ url_for('matplot_kinematics') }}" alt="Image Placeholder" height="600">
+</a>
+
+
+</div>
+
+
+{% endblock %}
+
+

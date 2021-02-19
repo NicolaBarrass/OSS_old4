@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+
+form {
+  /* Just to center the form on the page */
+  width: 1000px;
+}
+
+{% block content %}
+
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+{{ form.cd(value=current_date) }} 
+
+<p>{{ form.dt() }}</p>
+ <input type="submit" name="submitButton" value="Select" />
+ <p>
+ <input type="submit" name="submitButton" value="Go back a week" />
+ <input type="submit" name="submitButton" value="Go forward a week" />
+ </form>
+ 
+
+<table>
+    <tr>
+        <th>Day</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Action</th>
+    </tr>
+    
+    {% for day,doa_str,time,m_c,appID,details,date in col_values %}
+    <tr>
+        <td>{{day}}</td>
+        <td>{{doa_str}}</td>
+        <td>{{time}}</td>
+        {% if m_c == "make" %}
+            <td><a href="{{ url_for('make', date=date, time=time) }}" class="on-page">{{m_c}}</a>
+        {% endif %}
+        {% if m_c == "cancel" %}
+            <td><a href="{{ url_for('cancel', date= date, time=time, appID=appID, details=details) }}" class="on-page">{{m_c}}</a>
+        {% endif %}
+        {% if appID != 0 %}
+            <td><a href="{{ url_for('appointment', appID= appID) }}" class="on-page">{{details}}</a>
+        {% endif %}
+    </tr>
+    {% endfor %}
+    
+</table>
+
+
+
+{% endblock %}

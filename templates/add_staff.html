@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+{{table}}
+
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        {{form.role_select}}
+        {{form.staff_select}}
+        </select>
+        </p>
+        <input type="submit" name="submitButton" value="Add to staff list" />
+        <input type="submit" name="submitButton" value="Exit" />
+
+    </form>
+
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+{% for name_values,type_values in col_values %}
+{{name_values}} <input type="checkbox" name="fruit" value="Apple" checked> 
+{% endfor %}
+
+{% endblock %}

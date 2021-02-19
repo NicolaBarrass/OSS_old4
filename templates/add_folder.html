@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+{{table}}
+
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        folder type: {{form.ftype_select}}<br>
+        {{path}}<br>
+
+        {{form.path_select}} <input type="submit" name="submitButton" value="Open Folder" /><br>
+        </select>
+        </p>
+        <input type="submit" name="submitButton" value="Select Path" />
+        <input type="submit" name="submitButton" value="Exit" />
+
+    </form>
+
+{% endblock %}

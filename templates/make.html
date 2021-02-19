@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>You are making an appointment for <br>
+{{day}} {{date}} <br>
+{{time}}</h1>
+
+<h1> Please select patient from below or cancel to return to diary</h1>
+
+<h1><a href="{{ url_for('diary', date=date) }}" class="on-page">Cancel</a></h1>
+
+
+    
+{{table}}
+
+{% endblock %}

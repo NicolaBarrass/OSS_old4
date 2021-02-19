@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<table>
+<tbody>
+<tr><td>Name:              </td> <td>{{report_var.name}}</td></tr>
+<tr><td>Date of birth:      </td><td>{{report_var.dob_str}}</td></tr>
+<tr><td>Hospital Number:  </td>  <td>{{report_var.hosp_no}}</td></tr>
+<tr><td>NHS Number:      </td>   <td>{{report_var.NHS_no}}</td></tr>
+</tbody>
+</table>
+<p><p>
+Date of assessment: {{report_var.doa_str}}<p>
+<p>Referrer: {{report_var.referrer}}
+<p>Data collected by:{% for s in report_var.collector %} {{s}} {% endfor %}
+<p>Data processed by:{% for s in report_var.processor %} {{s}} {% endfor %}
+<p>Report written by:{% for s in report_var.writer %} {{s}} {% endfor %}
+<p>Report reviewed by:{% for s in report_var.reviewer %} {{s}} {% endfor %}
+
+
+<form action="" method="post" >
+<input type="submit" name="submitButton" value="export" />
+</form>
+
+
+{% endblock %}

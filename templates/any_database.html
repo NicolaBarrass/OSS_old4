@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<p>
+<form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+<input type="submit" name="submitButton" value="Graph"/>
+</p>
+</form>
+
+    {{ table }}
+
+{% endblock %}

@@ -1,0 +1,144 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {{ js_resources|indent(4)|safe }}
+    {{ css_resources|indent(4)|safe }}
+    {{ plot_script|indent(4)|safe }}
+</head>
+
+<div class="row">
+<div class="columnall">
+<p>
+<p>
+
+    
+
+<h2 id="Header"></h2>
+    <a href='#Header'>Header</a>
+    <a href='#Exam'>Exam</a>
+    <a href='#Kinematics'>Kinematics</a>
+    <a href='#Kinetics'>Kinetics</a>
+<p>Header</p>
+
+<table>
+<tbody>
+<tr><td>Name:              </td> <td>{{rep_data.name}}</td></tr>
+<tr><td>Date of birth:      </td><td>{{rep_data.dob_str}}</td></tr>
+<tr><td>Hospital Number:  </td>  <td>{{rep_data.hosp_no}}</td></tr>
+<tr><td>NHS Number:      </td>   <td>{{rep_data.NHS_no}}</td></tr>
+</tbody>
+</table>
+
+<p>Date of assessment: {{rep_data.doa_str}}<p>
+<p>Referrer: {{rep_data.referrer}}
+<p>Data collected by:{% for s in rep_data.collector %} {{s}} {% endfor %}
+<p>Data processed by:{% for s in rep_data.processor %} {{s}} {% endfor %}
+<p>Report written by:{% for s in rep_data.writer %} {{s}} {% endfor %}
+<p>Report reviewed by:{% for s in rep_data.reviewer %} {{s}} {% endfor %}
+
+<h2 id="Exam">Exam</h2>
+    <a href='#Header'>Header</a>
+    <a href='#Exam'>Exam</a>
+    <a href='#Kinematics'>Kinematics</a>
+    <a href='#Kinetics'>Kinetics</a>
+    
+    
+<div class="row">
+  <div class="column2">
+  
+<h2 id="Kinematics">Kinematics</h2>
+    <a href='#Header'>Header</a>
+    <a href='#Exam'>Exam</a>
+    <a href='#Kinematics'>Kinematics</a>
+    <a href='#Kinetics'>Kinetics</a>
+    
+    
+
+<table>
+<tbody>
+{% for  my_a in rep_data.apps %}
+    <tr><td>{{my_a.doa_str}}</td></tr>
+         {% for  my_c in my_a.condition %}
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp{{my_c.footware}} {{my_c.walking_aid}}</td><td><input type="checkbox"></td></tr>
+                 {% for  my_t in my_c.trial %}
+                    <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp{{my_t.c3dfile}} </td><td><input STYLE="color: #FFFFFF" type="checkbox"></td></tr>
+                 
+                {% endfor %}
+        {% endfor %} 
+{% endfor %}
+
+</tbody>
+</table>
+</div>
+<div class="column6">
+
+<a class="imageAnchor" href="#">
+    <img src="{{ url_kinematics }}" alt="Image Placeholder" height="600">
+</a>
+
+
+</div>
+
+</div>
+<div class="row">
+  <div class="column2">
+  
+  
+  <h2 id="Kinetics">Kinetics</h2>
+    <a href='#Header'>Header</a>
+    <a href='#Exam'>Exam</a>
+    <a href='#Kinematics'>Kinematics</a>
+    <a href='#Kinetics'>Kinetics</a>
+  
+
+
+<table>
+<tbody>
+{% for  my_a in rep_data.apps %}
+    <tr><td>{{my_a.doa_str}}</td></tr>
+         {% for  my_c in my_a.condition %}
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp{{my_c.footware}} {{my_c.walking_aid}}</td><td><input type="checkbox"></td></tr>
+                 {% for  my_t in my_c.trial %}
+                    <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp{{my_t.c3dfile}} </td><td><input STYLE="color: #FFFFFF" type="checkbox"></td></tr>
+                 
+                {% endfor %}
+        {% endfor %} 
+{% endfor %}
+
+
+</tbody>
+</table>
+</div>
+
+
+<div class="column6">
+
+<a class="imageAnchor" href="#">
+    <img src="{{ url_kinetics }}" alt="Image Placeholder" height="600">
+</a>
+
+
+</div>  
+</div>  
+
+
+<div>                  
+
+
+    <h1 style="text-align: center; ">Flask + Bokeh + EasyBase.io</h1>
+    <div style="display: flex; justify-content: center;">
+        {{ plot_div|indent(4)|safe }}
+    </div>
+
+
+</div>  
+
+{% endblock %}

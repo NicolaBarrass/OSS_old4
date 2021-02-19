@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<table>
+<tbody>
+<tr><td>Name:              </td> <td>{{rep_data.name}}</td></tr>
+<tr><td>Date of birth:      </td><td>{{rep_data.dob_str}}</td></tr>
+<tr><td>Hospital Number:  </td>  <td>{{rep_data.hosp_no}}</td></tr>
+<tr><td>NHS Number:      </td>   <td>{{rep_data.NHS_no}}</td></tr>
+</tbody>
+</table>
+<p><p>
+Date of assessment: {{rep_data.doa_str}}<p>
+<p>Referrer: {{rep_data.referrer}}
+<p>Data collected by:{% for s in rep_data.collector %} {{s}} {% endfor %}
+<p>Data processed by:{% for s in rep_data.processor %} {{s}} {% endfor %}
+<p>Report written by:{% for s in rep_data.writer %} {{s}} {% endfor %}
+<p>Report reviewed by:{% for s in rep_data.reviewer %} {{s}} {% endfor %}
+
+{% endblock %}
